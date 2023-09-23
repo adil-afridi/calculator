@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <input type="text" name="" class="input">
+        </header>
+        <div class="clc_body">
+            <div class="row">
+                <button class="btn" onclick="add(7)">7</button>
+                <button class="btn" onclick="add(8)">8</button>
+                <button class="btn" onclick="add(8)">9</button>
+                <button class="btn" onclick="clearChar()">Del</button>
+            </div>
+            <div class="row">
+                <button class="btn" onclick="add(4)">4</button>
+                <button class="btn" onclick="add(5)">5</button>
+                <button class="btn" onclick="add(6)">6</button>
+                <button class="btn plus" onclick="add('+')">+</button>
+            </div>
+            <div class="row">
+                <button class="btn" onclick="add(1)">1</button>
+                <button class="btn" onclick="add(2)">2</button>
+                <button class="btn" onclick="add(3)">3</button>
+                <button class="btn  minus" onclick="add('-')">-</button>
+            </div>
+            <div class="row">
+                <button class="btn" onclick="add('.')">.</button>
+                <button class="btn" onclick="add('/')">/</button>
+                <button class="btn" onclick="add(0)">0</button>
+                <button class="btn" onclick="add('*')">X</button>
+            </div>
+            <div class="row">
+                <button class="btn clear" onclick="reset()">C</button>
+                <button class="btn result" onclick="result()">=</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var input = document.querySelector(".input")
+
+        function add(num){
+            input.value += num;
+        }
+
+        function result(){
+            if(input.value == ""){
+            input.innerHTML = "";
+                }else{
+                    input.value = eval(input.value);
+                }
+        }
+
+        function reset(){
+            input.value = "";
+        }
+
+        function clearChar(){
+            let currentValue = input.value;
+            let newValue = currentValue.slice(0,-1);
+
+            input.value = newValue;
+        }
+      
+    </script>
+    
+</body>
+</html>
